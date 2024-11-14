@@ -5,7 +5,7 @@ This project automates the process of fetching and logging vehicle data into a G
 
 # Introduction
 In this project, we automate the process of fetching vehicle data through an API and storing it in Google Sheets for analysis. The data includes information such as delivery times, travelled distance, vehicle numbers Once the data is collected in Google Sheets, Power BI is used to visualize the key metrics, such as distance traveled and fuel consumption, enabling better decision-making and insights.
-
+```sql
 [ Start ]
     |
     v
@@ -28,7 +28,7 @@ In this project, we automate the process of fetching vehicle data through an API
     |
     v
 [ End ]
-
+```
 
 
 # Key Steps:
