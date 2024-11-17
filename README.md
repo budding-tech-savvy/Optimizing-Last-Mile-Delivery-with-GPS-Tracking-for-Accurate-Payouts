@@ -131,6 +131,10 @@ sheet.getRange("P2").setValue(totalReading);
 ```
 
 **Data Visualization with Power BI:** Once the data is in the Google Sheet, Power BI is used to create interactive dashboards and visualizations for easier analysis.
+![image](https://github.com/user-attachments/assets/5391fb5b-49d7-4def-baee-45ba630334fd)
+![image](https://github.com/user-attachments/assets/8cf0684d-88a2-4ab2-b54e-90993661e5da)
+
+
 
 # Challenges
 
