@@ -35,6 +35,7 @@ In this project, we automate the process of fetching vehicle data through an API
 
 # Key Steps:
 **Fetching Data from API:** Using Google Apps Script, data is fetched from an external API (or can be replaced with your own data source).
+
 ```sql
 <!=Using App Script, I fetched the required datasets related to last-mile vehicles and calculated payouts directly in Google Sheets.=>
 function fetchWeatherData() {
@@ -92,7 +93,6 @@ sheet.getRange("P2").setValue(totalReading);
 }
 ```
 
-
 **Storing Data in Google Sheets:** The fetched data is automatically inserted into Google Sheets in a structured format.<br>
 
 ![image](https://github.com/user-attachments/assets/5aeb76e7-9962-4890-82bc-ccd7f7f3787a)
@@ -103,37 +103,46 @@ sheet.getRange("P2").setValue(totalReading);
 #Used to fetch data coming through API into other sheet
 =importrange("https://docs.google.com/spreadsheets/d/1V5ZEd-OJQ0MhlEh3UBkxFIZ34SeMyfIRMJousxBGh-M/edit?gid=507610305#gid=507610305","Sheet1!A:N")
 
-#
+#fetched terms and condition regarding the extrakm from another sheet**
 =vlookup(O2,'Terms and condition'!$F:$H,3,0)/day(eomonth(B2,0))
 
+#used to count total number of days a perticular vehicle travelled
 =countif(F:F,F2)
 
+#calculated total km travalled by a vehicle
 =sumif(F:F,F2,N:N)
 
+#adopted to calculated total extra km payout
 =if(G2="ace", if(R2>1000,(R2-1000)/Q2,0)*8,10*if(R2>1000,(R2-1000)/Q2,0))
 
+#incentive calculation
 =if(Q2=day(eomonth(B2,0)),1000/Q2,0)
 
+#late reporting vehicle amount
 =if(J2>time(4,0,0),150,0)
 
+#overtime cost 
 =if(((hour(M2)-8)+minute(M2)/60)<0,0,if(((hour(M2)-8)+minute(M2)/60)>0,1*150,0))
 
+#total payable amount
 =(P2+S2+T2+U2+W2)-V2
 
 
 ```
 
 **Data Visualization with Power BI:** Once the data is in the Google Sheet, Power BI is used to create interactive dashboards and visualizations for easier analysis.
-Challenges
 
-# While building this project, we faced several challenges:
+# Challenges
 
-**Data Accuracy:** Ensuring the API returned accurate and up-to-date vehicle information.
-Data Formatting: Aligning the incoming API data to fit the structured format in Google Sheets.
-Integration Issues: Ensuring smooth integration between Google Sheets and Power BI for real-time updates.
-Vendor Resistance: Initially, some vendors were skeptical about the system, requiring us to educate them on its benefits.
-Technologies Used
-Google Apps Script: To fetch data from the API and insert it into Google Sheets. The script handles data requests, processes the response, and stores it in the sheet for further analysis.
-Google Sheets: Acts as the data storage solution for vehicle data, allowing easy organization and management of large datasets.
-Power BI: Used for creating interactive dashboards and visualizations to track key metrics like total distance, fuel consumption, and vehicle performance.
-API (OpenWeatherMap or another custom API): To fetch dynamic vehicle data, including time, readings, and other relevant details.
+**While building this project, we faced several challenges:**
+
+**Data Accuracy:** Ensuring the API returned accurate and up-to-date vehicle information.<br>
+**Data Formatting:** Aligning the incoming API data to fit the structured format in Google Sheets.<br>
+**Integration Issues:** Ensuring smooth integration between Google Sheets and Power BI for real-time updates.<br>
+**Vendor Resistance:** Initially, some vendors were skeptical about the system, requiring us to educate them on its benefits.<br>
+
+# Technologies Used
+**Google Apps Script:** To fetch data from the API and insert it into Google Sheets. The script handles data requests, processes the response, and stores it in the sheet for further analysis.<br>
+**Google Sheets:** Acts as the data storage solution for vehicle data, allowing easy organization and management of large datasets.<br>
+**Power BI:** Used for creating interactive dashboards and visualizations to track key metrics like total distance, fuel consumption, and vehicle performance.<br>
+**API (another custom API):** To fetch dynamic vehicle data, including time, readings, and other relevant details.<br>
