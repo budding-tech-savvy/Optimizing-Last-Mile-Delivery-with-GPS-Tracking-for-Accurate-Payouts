@@ -1,6 +1,10 @@
 # Optimizing-Last-Mile-Delivery-with-GPS-Tracking-for-Accurate-Payouts
 This project automates the process of fetching and logging vehicle data into a Google Sheet. The script retrieves dynamic vehicle data (such as delivery times, fuel types, and readings) from an external API or data source and organizes it in a structured format with predefined headers.
 
+
+**Note:- The projects on my GitHub are structured as proof of concepts to demonstrate the workflows and methodologies I would apply in a professional setting.**
+
+
 ![image](https://github.com/user-attachments/assets/e4d6da37-ada3-4269-8aad-b6da310576e3)
 ![image](https://github.com/user-attachments/assets/943e5602-1e33-42b2-b3bb-b63bd8cc2575)
 
